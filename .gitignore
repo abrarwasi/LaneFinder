@@ -1,0 +1,23 @@
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.key
+
+# Development files
+node_modules/
+coverage/
+dist/
+*.log
+*.zip
+.DS_Store
+Thumbs.db
+
+# Private business information
+screenshots/
+private/
+customer-data/
+*.eml
+*.mbox
