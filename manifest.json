@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Lane Finder \u2013 Freight Route Helper",
+  "short_name": "Lane Finder",
+  "version": "0.2.0",
+  "description": "User-triggered freight quote parsing and route planning, with optional Google Routes API integration.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://routes.googleapis.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "parser.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Lane Finder: open / minimize"
+  },
+  "minimum_chrome_version": "114"
+}
